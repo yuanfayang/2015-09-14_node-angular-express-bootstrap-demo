@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nodejs+express+angular+bootstrap框架实例</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+</head>
+<body ng-app="app">
+<div>
+    your name:<input ng-model="yourname" type="text">
+    <br>
+    hello {{yourname||'world'}}
+</div>
+
+<div ng-controller="demoHelloController">
+    <h1>{{hello}}</h1>
+    <form name="myForm" ng-controller="FormController" class="my-form">
+        userType: <input name="input" ng-model="userType" required>
+        <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+        <tt>userType = {{userType}}</tt><br>
+        <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br>
+        <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br>
+        <tt>myForm.$valid = {{myForm.$valid}}</tt><br>
+        <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br>
+    </form>
+</div>
+<script src="scripts/angular/app.js"></script>
+<script src="scripts/angular/controller.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    angular.bootstrap(document,['app']);
+</script>
+</body>
+</html>
